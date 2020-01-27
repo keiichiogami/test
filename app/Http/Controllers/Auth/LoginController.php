@@ -25,7 +25,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
+    protected $redirectTo = '/calendar';
 
     /**
      * Create a new controller instance.
@@ -36,4 +37,10 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    
+    protected function loggedOut(\Illuminate\Http\Request $request)
+    {
+        return redirect('/calendar');
+    }
+    
 }

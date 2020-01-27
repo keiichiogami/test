@@ -1,0 +1,40 @@
+.text_input_selection{
+    margin-top:20px;  
+    margin-bottom:10px;
+}
+
+.text{
+    display: inline-block;
+    margin-right:30px;
+    font-size:30px;
+}
+
+.a_input{
+    font-size:30px; 
+}
+
+.label-text{
+    font-size:25px;
+}
+
+.form-title {
+    padding:20px 0;
+}
+
+.form-border{
+  border:solid 2px ;  
+  /*margin:0 20px;*/
+  box-sizing: border-box;
+}
+
+.btn-primary{
+    margin-top:20px;
+}
+
+.required_input{
+    color: red;
+}
+
+#yourInput{
+    
+}

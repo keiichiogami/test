@@ -3,14 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>家計簿「極み」</title>
 
-        <title>Laravel</title>
+        <script src="{{ secure_asset('js/app.js') }}" defer></script>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
+        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/welcome.css') }}" rel="stylesheet">
+    <!--    <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -61,40 +64,72 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-        </style>
+        </style>　-->
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+        <div class="container" style="background:white;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 >家計簿「極み」</h1>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>はじめての方はこちら</p>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="btnarea">
+                        <a href="{{ route('register') }}"class="btn btn-primary">アカウントの作成</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>アカウントをお持ちの方はこちら</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="btnarea">
+                        <a href="{{ route('login') }}" class="btn btn-primary">ログイン</a>
+                    </div>
                 </div>
             </div>
         </div>
     </body>
 </html>
+
+<!--<div class="flex-center position-ref full-height">-->
+        <!--    @if (Route::has('login'))-->
+        <!--        <div class="top-right links">-->
+        <!--            @auth-->
+        <!--                <a href="{{ url('/home') }}">Home</a>-->
+        <!--            @else-->
+        <!--                <a href="{{ route('login') }}">Login</a>-->
+
+        <!--                @if (Route::has('register'))-->
+        <!--                    <a href="{{ route('register') }}">Register</a>-->
+        <!--                @endif-->
+        <!--            @endauth-->
+        <!--        </div>-->
+        <!--    @endif-->
+
+        <!--    <div class="content">-->
+        <!--        <div class="title m-b-md">-->
+        <!--            Laravel-->
+        <!--        </div>-->
+
+        <!--        <div class="links">-->
+        <!--            <a href="https://laravel.com/docs">Docs</a>-->
+        <!--            <a href="https://laracasts.com">Laracasts</a>-->
+        <!--            <a href="https://laravel-news.com">News</a>-->
+        <!--            <a href="https://blog.laravel.com">Blog</a>-->
+        <!--            <a href="https://nova.laravel.com">Nova</a>-->
+        <!--            <a href="https://forge.laravel.com">Forge</a>-->
+        <!--            <a href="https://vapor.laravel.com">Vapor</a>-->
+        <!--            <a href="https://github.com/laravel/laravel">GitHub</a>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->

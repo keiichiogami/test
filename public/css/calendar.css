@@ -1,0 +1,107 @@
+.container{
+  background-color: white;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.h1_title{
+  font-size:50px;
+  text-align: center;
+  margin-bottom:20px;
+}
+
+.navbar{
+  background-color:#333333; 
+  /*margin:0;*/
+  padding:0;
+}
+
+.nav{
+  font-size:20px;
+  display:block;
+  text-align: center;
+  color:white;
+  /*border:solid 1px ;*/
+  padding:10px 0;
+}
+
+.a_color{
+  color:black;
+}
+
+.a_day{
+  display: block;
+  /*position: absolute;*/
+  height:100%;
+  font-size:25px;
+  top:0;
+}
+
+h2 {
+  padding-top:30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+th {
+  height: 30px;
+  text-align: center;
+}
+td {
+  height: 100px;
+  position: relative;
+}
+.td_day:hover{
+  background-color: #FFABCE;
+}
+.today {
+  background: #FFFFCC;
+}
+th:nth-of-type(1), td:nth-of-type(1), td:nth-of-type(1) .a_day {
+  color: red;
+}
+th:nth-of-type(7), td:nth-of-type(7), td:nth-of-type(7) .a_day {
+  color: #3333FF;
+}
+
+li{
+  list-style: none;
+}
+
+p{
+  width: 30px;
+}
+
+.income_list{
+  border:solid 1px black;
+  margin :10px 0;
+  padding:5px 0;
+  color:black;
+}
+
+.income_list:hover{
+  color:blue;
+  border:solid 1px blue;
+}
+
+.bg_day{
+  background-color: #EEEEEE;
+  font-size:15px;
+}
+
+.money{
+  color:red;
+  font-size:20px;
+  width: 30px;
+  margin:0;
+  position: absolute;
+  top:65px;
+  /*float:right;*/
+}
+
+.text_input{
+  margin:0 auto;
+}
+
+.text_input_money{
+  font-size:25px;
+  margin:0 auto;
+}
