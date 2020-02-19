@@ -7,6 +7,7 @@
   font-size:50px;
   text-align: center;
   margin-bottom:20px;
+  padding-top:17px;
 }
 
 .navbar{
@@ -54,7 +55,7 @@ li{
 }
 
 p{
-  width: 30px;
+  /*width: 30px;*/
 }
 
 .income_list{

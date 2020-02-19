@@ -1,17 +1,17 @@
 @extends('layouts.input')
-@section('title', '支出の入力画面')
+@section('title', '収入のカテゴリーの作成')
 @section('content')
-    <div class="container">
+    <div class="container border_b">
         <div class="row " >
             <div class="col-lg-12 text-center mx-auto text_input_selection">
-                <div class="text">支出</div>
-                <a class="a_input" href="/input/expenditure/create?date={{$date}}">収入</a>
+                <a class="a_input_income" href="/input/expenditure/create?date={{$date}}"><i class="fas fa-money-bill-wave"></i> 支出</a>
+                <div class="text"><i class="fas fa-money-bill"></i> 収入</div>
             </div>
         </div>
         
         <div class="row">
             <div class="col-lg-5 mx-auto form-border">
-                <h2 class="text-center form-title">入力してください</h2>
+                <h2 class="text-center form-title"><i class="fas fa-pen"></i> 入力してください</h2>
                 <form action="{{ action('Input\IncomeController@create') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     
@@ -52,21 +52,26 @@
                             <select name="category_id">
                                 <option value="">選択してください&nbsp;&nbsp;&nbsp;&nbsp;</option>
                                 
-                                @foreach($categorys_i as $category)
+                                @foreach($icategories as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
                             </select>
-                        </div>    
+                        </div>   
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-5 label-text">メモ</label>
                         <div class="col-lg-7">
-                            <textarea class="form-control" name="memo" rows="2" placeholder="（例）服2着買った"></textarea>
+                            <textarea class="form-control" name="memo" rows="2" placeholder="（例）服2着を売却"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-lg-12 text-right">
+                            <a class="" href="/input/income/category_create">新規カテゴリーの作成</a>
+                        </div>   
+                    </div>
+                    <div class="form-group row">
                         <div class="col-sm-12 text-center">
-                            <input type="submit" class="btn btn-primary " value="支出を入力する">
+                            <input type="submit" class="btn btn-primary btn_top" value="収入を入力する">
                         </div>    
                     </div> 
                 </form>
@@ -75,10 +80,6 @@
     </div>
     
     <!--カレンダー-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script> 
-    
     <script>
       $(function() {
         $(".datepicker").datepicker();
@@ -86,15 +87,10 @@
         $("#datepicker").datepicker("option", "buttonImageOnly", true);
       });
     </script> 
-    <!------------------------------------------------------------------------------------------------------------->
 
     <!--電卓-->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jcalculator/1403955268/jcalculator.js"></script>
-
     <script type="text/javascript"> 
         $('#yourInput').calculator();
     </script> 
-    <!------------------------------------------------------------------------------------------------------------->
-<!--<script src="{{ secure_asset('js/app.js') }}" defer></script>-->
 @endsection
 

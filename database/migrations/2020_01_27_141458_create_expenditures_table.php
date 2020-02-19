@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExpenditureTable extends Migration
+class CreateExpendituresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class CreateExpenditureTable extends Migration
      */
     public function up()
     {
-        Schema::create('expenditure', function (Blueprint $table) {
+        Schema::create('expenditures', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('date');
+            $table->integer('money');
+            $table->bigInteger('category_id');
+            $table->string('memo')->nullable();
+            $table->bigInteger('user_id');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateExpenditureTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('expenditure');
+        Schema::dropIfExists('expenditures');
     }
 }

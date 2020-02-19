@@ -1,0 +1,23 @@
+.list_report{
+  border:solid 2px black;
+  margin :10px 0;
+  padding:15px 0;
+  color:black;
+  font-size:20px;
+  border-radius: 20px;
+}
+
+.text_report{
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .html_title {
+      font-size:20px;
+    }
+  }
+@media screen and (max-width: 420px) {
+    .html_title {
+      font-size:17px;
+    }
+  }  

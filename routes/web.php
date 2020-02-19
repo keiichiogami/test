@@ -16,6 +16,9 @@ Route::group(['prefix' => 'input/income', 'middleware' => 'auth'], function() {
     Route::get('edit', 'Input\IncomeController@edit');
     Route::post('edit', 'Input\IncomeController@update');
     Route::get('delete', 'Input\IncomeController@delete');
+    Route::get('category_create', 'Input\IncomeController@category_add');
+    Route::post('category_create', 'Input\IncomeController@category_create');
+    Route::get('category_delete', 'Input\IncomeController@category_delete');
 });
 
 Route::group(['prefix' => 'input/expenditure', 'middleware' => 'auth'], function() {
@@ -24,16 +27,14 @@ Route::group(['prefix' => 'input/expenditure', 'middleware' => 'auth'], function
     Route::get('edit', 'Input\ExpenditureController@edit');
     Route::post('edit', 'Input\ExpenditureController@update');
     Route::get('delete', 'Input\ExpenditureController@delete');
-});
-
-Route::group(['prefix' => 'report/income', 'middleware' => 'auth'], function() {
-    Route::get('month_income', 'Report\IncomeReportController@month');
-    Route::get('year_income', 'Report\IncomeReportController@year');
+    Route::get('category_create', 'Input\ExpenditureController@category_add');
+    Route::post('category_create', 'Input\ExpenditureController@category_create');
+    Route::get('category_delete', 'Input\ExpenditureController@category_delete');    
 });
  
-Route::group(['prefix' => 'report/expenditure', 'middleware' => 'auth'], function() {   
-    Route::get('month_expenditure', 'Report\ExpenditureReportController@month');
-    Route::get('year_expenditure', 'Report\ExpenditureReportController@year');
+Route::group(['prefix' => 'report', 'middleware' => 'auth'], function() {   
+    Route::get('month_report', 'ReportController@month');
+    Route::get('year_report', 'ReportController@year');
 });
 
  Route::get('test', 'Test1Controller@add');	

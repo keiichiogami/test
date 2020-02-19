@@ -4,7 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Categorys_I extends Model
+class Ecategory extends Model
 {
     protected $guarded = array('id');
+    
+    public static $rules = array(
+        'name' => 'required',
+    );
 }

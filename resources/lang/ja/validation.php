@@ -149,6 +149,7 @@ return [
         'date' => '日付',
         'money' => '金額',
         'category_id' => 'カテゴリー',
+        'name' => 'カテゴリー名',
     ],
 
 ];

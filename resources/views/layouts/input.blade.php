@@ -11,6 +11,12 @@
 
     <!-- Scripts -->
     <!--<script src="{{ secure_asset('js/app.js') }}" defer></script>-->
+    <!--カレンダー-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script> 
+    <!--電卓-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jcalculator/1403955268/jcalculator.js"></script>   
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,49 +25,32 @@
     <!-- Styles -->
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/input.css') }}" rel="stylesheet">
-    <link href="{{ secure_asset('css/calendar1.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/icalendar.css') }}" rel="stylesheet">
     <!--カレンダー-->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css">
     <!--電卓-->
     <link href="{{ secure_asset('css/jcalculator.css') }}" rel="stylesheet" >
-
+    
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="container border_t">
         <div class="row">
             <div class="col-lg-12">
-                @guest
-                    @if (Route::has('register'))
-                        <a class=" nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
-                    @endif
-                @else
-                    <a id="navbarDropdown" class="text-right nav-float nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}さん <span class="caret"></span></a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('messages.Logout') }}</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                @endguest
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="h1_title">家計簿「極み」</h1>
+                <h1 class="h1_title"><i class="far fa-clipboard"></i> 家計簿 <i class="fas fa-clipboard"></i></h1>
             </div>
         </div>
         <div class="row navbar">
             <div class="col-lg-4">
-                <a href="/input/income/create" class="nav">入力</a>
+                <a href="/input/expenditure/create" class="nav"><i class="fas fa-pen"></i> 入力</a>
             </div>
             <div class="col-lg-4">
-                <a href="/calendar" class="nav">カレンダー</a>
+                <a href="/calendar" class="nav"><i class="far fa-calendar-alt"></i> カレンダー</a>
             </div>
             <div class="col-lg-4 as">
-                <a href="/report/income/month_income" class="nav">レポート</a>
+                <a href="/report/month_report" class="nav"><i class="fas fa-archive"></i> レポート</a>
             </div>
         </div>
-     
     </div>  
     @yield('content')
 </body>
