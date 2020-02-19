@@ -94,6 +94,9 @@ class ReportController extends Controller
         $icategory_day_allsum = 0;
         $ecategory_day_allsum = 0;
         
+        $icategory_month_sum = 0;
+        $ecategory_month_sum = 0;
+        
         for ($i = 0; $i < $count; $i++, $dt->addDay()) {
             
             //日付を保存する copyしないと全部同じオブジェクトを入れてしまうことになる
